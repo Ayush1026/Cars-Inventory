@@ -1,0 +1,16 @@
+﻿@model CarsInventory.DataAccessLayer.Model.CarsModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete car ?</h3>
+<div>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" asp-controller="Cars">Back to List</a>
+    </form>
+</div>

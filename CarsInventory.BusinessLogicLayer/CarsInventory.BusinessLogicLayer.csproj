@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarsInventory.Common\CarsInventory.Common.csproj" />
+    <ProjectReference Include="..\CarsInventory.DataAccessLayer\CarsInventory.DataAccessLayer.csproj" />
+  </ItemGroup>
+
+</Project>

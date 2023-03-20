@@ -1,0 +1,88 @@
+﻿@using System.Web.Http.ModelBinding
+@using CarsInventory.DataAccessLayer.Model
+@model IEnumerable<CarsInventory.DataAccessLayer.Model.CarsModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Car</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchTerm" value="@ViewData["SearchFilter"]" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+<br />
+<table class="table">
+    <thead>    
+            <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.New)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>  
+    </thead>
+    <tbody>
+
+
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Brand)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Model)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Year)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.New)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserId)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CarId }, new { @class = "btn btn-primary" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id=item.CarId }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            }
+        
+        else
+            {
+                <p>No cars found</p>
+                <p>Your User id:  @ViewBag.UserId</p>
+            }
+    </tbody>
+</table>

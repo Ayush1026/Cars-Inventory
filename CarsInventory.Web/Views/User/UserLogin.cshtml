@@ -1,0 +1,44 @@
+﻿@model CarsInventory.DataAccessLayer.Model.UserModel
+
+@{
+    ViewData["Title"] = "UserLogin";
+}
+
+<h1>Login</h1>
+
+<form method="post">
+    <div class="container" style="background-color:#f1f1f1">
+        <div class="container-1">
+            <label for="uname"><b>Username</b></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+            <br>
+            <label for="psw" id="lblPassword"><b>Password</b></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+            <br>
+            <label for="Gender" id="lblGender"><b>Gender</b></label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Gender, new SelectList(new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Male", Value = "Male" },
+                new SelectListItem { Text = "Female", Value = "Female" },
+                new SelectListItem { Text = "Non-binary", Value = "Non-binary" }
+                }, "Value", "Text"), "Select Gender", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+            </div>
+            <br>
+            <button type="submit">Login</button>
+            @if (ViewData["Validate Message"]!=null)
+            {
+                <br />
+                <br />
+                <label>@ViewData["Validate Message"]</label>
+            }
+        </div>
+    </div>
+</form>

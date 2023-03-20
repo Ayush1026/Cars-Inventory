@@ -1,0 +1,24 @@
+2023-03-20 09:07:15,486  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info:
+ 2023-03-20 09:08:21,825  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info:
+ 2023-03-20 09:09:21,064  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info:
+ 2023-03-20 09:09:21,198  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info:
+ 2023-03-20 09:10:10,325  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info:
+ 2023-03-20 09:10:10,374  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info:
+ 2023-03-20 09:10:17,507  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info: Deleting the car model
+ 2023-03-20 09:10:18,219 ERROR Cars_Inventory.Logger.LoggerLog4net.Error [80] - MESSAGE: Exception: 
+ System.Exception: Error while deleting cars for user with id 0
+ ---> System.Exception: Error while deleting cars for user with id 0
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'entity')
+   at Microsoft.EntityFrameworkCore.Utilities.Check.NotNull[T](T value, String parameterName)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Remove(TEntity entity)
+   at CarsInventory.DataAccessLayer.Repositories.CarsRepository.Delete(Int32 id) in C:\Users\Ayush.g\Desktop\Project\CarsInventory.DataAccessLayer\Repositories\CarsRepository.cs:line 47
+   --- End of inner exception stack trace ---
+   at CarsInventory.DataAccessLayer.Repositories.CarsRepository.Delete(Int32 id) in C:\Users\Ayush.g\Desktop\Project\CarsInventory.DataAccessLayer\Repositories\CarsRepository.cs:line 53
+   at CarsInventory.BusinessLogicLayer.Services.CarsService.Delete(Int32 id) in C:\Users\Ayush.g\Desktop\Project\CarsInventory.BusinessLogicLayer\Services\CarsService.cs:line 48
+   --- End of inner exception stack trace ---
+   at CarsInventory.BusinessLogicLayer.Services.CarsService.Delete(Int32 id) in C:\Users\Ayush.g\Desktop\Project\CarsInventory.BusinessLogicLayer\Services\CarsService.cs:line 53
+   at Cars_Inventory.Controllers.CarsController.DeleteCar(Int32 id) in C:\Users\Ayush.g\Desktop\Project\Cars Inventory\Controllers\CarsController.cs:line 59
+2023-03-20 09:10:26,706  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info:
+ 2023-03-20 09:12:58,652  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info: Getting the searched Cars by GetSearchedTerm Service
+ 2023-03-20 09:13:00,848  INFO Cars_Inventory.Logger.LoggerLog4net.Info [39] - MESSAGE: Info:
+ 
